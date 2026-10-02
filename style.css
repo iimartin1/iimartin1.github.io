@@ -181,3 +181,21 @@ h2 {
   color: var(--texto-suave);
   font-size: 0.9rem;
 }
+
+.tarjeta img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 8px;
+  background: var(--superficie-clara);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .tarjeta {
+    transition: none;
+  }
+}
