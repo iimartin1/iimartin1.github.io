@@ -7,6 +7,7 @@
   --acento: #f59e0b;
   --acento-claro: #fbbf24;
   --menu-fondo: #111827;
+  --texto-boton: #1f2937;
 }
 
 :root[data-tema="claro"] {
@@ -14,6 +15,9 @@
   --texto: #1f2937;
   --texto-suave: #6b7280;
   --menu-fondo: #000000;
+  --acento: #b45309;
+  --acento-claro: #92400e;
+  --texto-boton: #ffffff;
 }
 
 * {
@@ -108,14 +112,14 @@ h1 {
   padding: 12px 24px;
   border-radius: 8px;
   background: var(--acento);
-  color: #1f2937;
+  color: var(--texto-boton);
   font-weight: bold;
   transition: background 0.15s;
 }
 
 .boton:hover {
   background: var(--acento-claro);
-  color: #1f2937;
+  color: var(--texto-boton);
 }
 
 /* ===== Secciones ===== */
@@ -151,6 +155,8 @@ h2 {
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
   transition: transform 0.2s;
+  --acento: #f59e0b;
+  --acento-claro: #fbbf24;
 }
 
 .tarjeta:hover {

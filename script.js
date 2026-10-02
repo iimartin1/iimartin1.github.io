@@ -1,17 +1,21 @@
 const botonTema = document.querySelector("#cambiar-tema");
+const raiz = document.documentElement;
 
-botonTema.addEventListener("click", () => {
-  const temaClaroActivo = document.documentElement.getAttribute("data-tema") === "claro";
-
-  if (temaClaroActivo) {
-    document.documentElement.removeAttribute("data-tema");
+function aplicarTema(claro) {
+  if (claro) {
+    raiz.setAttribute("data-tema", "claro");
   } else {
-    document.documentElement.setAttribute("data-tema", "claro");
+    raiz.removeAttribute("data-tema");
   }
 
-  const accionTema = temaClaroActivo ? "claro" : "oscuro";
-  botonTema.textContent = temaClaroActivo ? "Modo claro" : "Modo oscuro";
-  botonTema.setAttribute("aria-label", `Cambiar a modo ${accionTema}`);
-  botonTema.setAttribute("title", `Cambiar a modo ${accionTema}`);
-  botonTema.setAttribute("aria-pressed", String(temaClaroActivo));
+  // El botón muestra la acción disponible, no el tema actual
+  const destino = claro ? "oscuro" : "claro";
+  botonTema.textContent = `Modo ${destino}`;
+  botonTema.setAttribute("aria-label", `Cambiar a modo ${destino}`);
+  botonTema.setAttribute("title", `Cambiar a modo ${destino}`);
+}
+
+botonTema.addEventListener("click", () => {
+  const esClaro = raiz.getAttribute("data-tema") === "claro";
+  aplicarTema(!esClaro);
 });
